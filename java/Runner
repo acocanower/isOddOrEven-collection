@@ -1,0 +1,83 @@
+/**
+ * 
+ */
+
+/**
+ * @author acoca
+ *
+ */
+public class Runner {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("32 is even: "+isEven(32));
+		System.out.println("33 is even: "+isEven(33));
+		System.out.println("32.4 is even: "+isEven(32.4));
+		
+
+		System.out.println("32 is odd: "+isOdd(32));
+		System.out.println("33 is odd: "+isOdd(33));
+		System.out.println("32.4 is odd: "+isOdd(32.4));
+		
+
+	}
+	
+	private static boolean isEven(double x) {
+		boolean even = false;
+		int valueAsInt = (int) x;
+		if((double) valueAsInt == x) {
+			if(valueAsInt<0) {
+				valueAsInt *= -1;
+			}
+			while(valueAsInt>=10000) {
+				valueAsInt -= 10000;
+			}
+			while(valueAsInt>=1000) {
+				valueAsInt -= 1000;
+			}
+			while(valueAsInt>=100) {
+				valueAsInt -= 100;
+			}
+			while(valueAsInt>=10) {
+				valueAsInt -= 10;
+			}
+			even = true;
+			while (valueAsInt > 0 ) {
+				valueAsInt -=1;
+				even = !even;
+			}
+			
+		}
+		return even;
+	}
+	
+	private static boolean isOdd(double x) {
+		boolean odd = false;
+		int valueAsInt = (int) x;
+		if((double) valueAsInt == x) {
+			if(valueAsInt<0) {
+				valueAsInt *= -1;
+			}
+			while(valueAsInt>=10000) {
+				valueAsInt -= 10000;
+			}
+			while(valueAsInt>=1000) {
+				valueAsInt -= 1000;
+			}
+			while(valueAsInt>=100) {
+				valueAsInt -= 100;
+			}
+			while(valueAsInt>=10) {
+				valueAsInt -= 10;
+			}
+			odd = false;
+			while (valueAsInt > 0 ) {
+				valueAsInt -=1;
+				odd = !odd;
+			}		
+		}
+		return odd;
+	}
+}
